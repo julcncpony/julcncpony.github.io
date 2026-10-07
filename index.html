@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#85818b" />
     <title>Made With Motion</title>
-    <link rel="preload" as="image" href="/background-poster.jpg" fetchpriority="high" />
+    <script>
+      (() => {
+        const route = window.location.pathname.replace(/\/$/, '') || '/'
+        const isInterior = ['/interior', '/about', '/projects'].includes(route)
+        const imageUrl = isInterior
+          ? '/interior-room.webp'
+          : '/background-poster.jpg'
+        document.documentElement.classList.toggle('is-interior-route', isInterior)
+
+        const preload = document.createElement('link')
+        preload.rel = 'preload'
+        preload.as = 'image'
+        preload.href = imageUrl
+        preload.fetchPriority = 'high'
+        document.head.appendChild(preload)
+      })()
+    </script>
     <link rel="icon" type="image/png" href="/assets/favicon-96x96-B6z3ljmo.png" sizes="96x96" />
     <style>
       html,
@@ -19,8 +35,13 @@
       #root {
         background: #85818b url('/background-poster.jpg') center / cover no-repeat;
       }
+
+      html.is-interior-route body,
+      html.is-interior-route #root {
+        background-image: url('/interior-room.webp');
+      }
     </style>
-    <script type="module" crossorigin src="/assets/index-wTfnHZXe.js"></script>
+    <script type="module" crossorigin src="/assets/index-C2c0xmtg.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BXjZiuMG.css">
   </head>
   <body>
