@@ -10,7 +10,7 @@
         const route = window.location.pathname.replace(/\/$/, '') || '/'
         const isInterior = ['/interior', '/about', '/projects'].includes(route)
         const imageUrl = isInterior
-          ? '/interior-placeholder.jpg'
+          ? '/interior-room.webp'
           : '/background-poster.jpg'
         document.documentElement.classList.toggle('is-interior-route', isInterior)
 
@@ -38,10 +38,10 @@
 
       html.is-interior-route body,
       html.is-interior-route #root {
-        background-image: url('/interior-placeholder.jpg');
+        background-image: url('/interior-room.webp');
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-C2c0xmtg.js"></script>
+    <script type="module" crossorigin src="/assets/index-BD8LyW-r.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BXjZiuMG.css">
   </head>
   <body>
